@@ -75,7 +75,6 @@ public class RegistrationActivity extends AppCompatActivity {
                 // TODO Auto-generated method stub
             }
         });
-
         dobtxt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
