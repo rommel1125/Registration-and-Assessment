@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegistrationActivity"
+    android:background="@color/white"
+    android:orientation="vertical">
+<androidx.appcompat.widget.Toolbar
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/toolbar"
+    android:background="#6E5125"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+    app:title="REGISTRATION"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:text="STUDENT INFO"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textColor="@color/black"/>
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+            <EditText
+                android:id="@+id/lnametxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:hint="Last name"/>
+            <EditText
+                android:id="@+id/fnametxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:hint="First name"/>
+            <EditText
+                android:id="@+id/mnametxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:hint="Middle name(Optional)"/>
+            <EditText
+                android:id="@+id/agetxt"
+                android:layout_marginTop="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:hint="Age"
+                android:inputType="number"/>
+            <EditText
+                android:id="@+id/dobtxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:textColor="@color/black"
+                android:hint="Date of Birth"/>
+            <EditText
+                android:id="@+id/birthplacetxt"
+                android:layout_width="match_parent"
+                android:textColor="@color/black"
+                android:layout_height="wrap_content"
+                android:hint="Birth Place(City)"/>
+            <EditText
+                android:id="@+id/addresstxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:hint="Address"/>
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PARENT INFO"
+            android:fontFamily="sans-serif-medium"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:textColor="@color/black"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif-condensed"
+                android:textSize="15dp"
+                android:text="FATHER"/>
+            <EditText
+                android:id="@+id/fathersNameTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:hint="Father's name"/>
+            <EditText
+                android:id="@+id/fOccupationTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:hint="Occupation"/>
+
+
+            <TextView
+                android:layout_marginTop="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif-condensed"
+                android:textSize="15dp"
+                android:text="MOTHER"/>
+            <EditText
+                android:id="@+id/mothersNameTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:hint="Mother's name"/>
+            <EditText
+                android:id="@+id/mOccupationTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:hint="Occupation"/>
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="EDUCATIONAL BACKGROUND"
+            android:fontFamily="sans-serif-medium"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:textColor="@color/black"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif-condensed"
+                android:textSize="15dp"
+                android:text="Secondary Education"/>
+            <EditText
+                android:id="@+id/ElemTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:hint="School Name"/>
+            <EditText
+                android:id="@+id/ElemAddTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:hint="Address"/>
+
+            <TextView
+                android:layout_marginTop="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif-condensed"
+                android:textSize="15dp"
+                android:text="Higher Secondary Education"/>
+            <EditText
+                android:id="@+id/HighTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:hint="School Name"/>
+            <EditText
+                android:id="@+id/HighAddTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:hint="Address"/>
+        </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="COURSE"
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textColor="@color/black"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <EditText
+                android:id="@+id/courseTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:editable="false"
+                android:cursorVisible="false"
+                android:textColor="@color/black"
+                android:hint="Course"/>
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:layout_marginTop="30dp"
+                android:id="@+id/regBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="REGISTER"/>
+        </LinearLayout>
+    </LinearLayout>
+    </ScrollView>
+</LinearLayout>
