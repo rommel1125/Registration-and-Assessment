@@ -48,7 +48,7 @@ public class RegistrationActivity extends AppCompatActivity {
         categories.add(0,"Choose course");
         categories.add("BSIT - Bachelor of Science in Information Technology");
         categories.add("FOOD TECH - Food and technology");
-        categories.add("BSBM - Bachelor of Science IN business management");
+        categories.add("BSBM - Bachelor of Science in business management");
         categories.add("BSCS- Bachelor of Science in Computer Science");
         categories.add("BSECE - Bachelor of Science in Electronics and Communication Engineer");
 

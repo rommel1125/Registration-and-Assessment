@@ -223,10 +223,10 @@
             <Spinner
                 android:id="@+id/spinner"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="30dp"/>
 
             <Button
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="50dp"
                 android:id="@+id/regBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
