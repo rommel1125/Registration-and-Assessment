@@ -13,8 +13,7 @@
         android:id="@+id/toolbar"
         android:background="#6E5125"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:title="LOGIN"
-        app:titleMarginStart="40dp"/>
+        app:title="REGISTRATION and ASSESSMENT"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
