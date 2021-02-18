@@ -11,7 +11,7 @@ import android.widget.EditText;
 public class MainActivity extends AppCompatActivity {
 
     EditText studID,studPass;
-    Button loginBtn,registerBtn;
+    Button loginBtn,newStudBtn,oldStudBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,11 +21,20 @@ public class MainActivity extends AppCompatActivity {
         studID = findViewById(R.id.studID);
         studPass = findViewById(R.id.studPass);
         loginBtn = findViewById(R.id.loginBtn);
-        registerBtn = findViewById(R.id.registerBtn);
-        registerBtn.setOnClickListener(new View.OnClickListener() {
+        newStudBtn = findViewById(R.id.newStudBtn);
+        oldStudBtn = findViewById(R.id.oldStudBtn);
+        newStudBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,RegistrationActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        oldStudBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,ValidationOldStudentActivity.class);
                 startActivity(intent);
             }
         });

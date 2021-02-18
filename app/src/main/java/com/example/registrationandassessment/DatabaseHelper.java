@@ -20,7 +20,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE " + student_table_name + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, LNAME TEXT, FNAME TEXT, MNAME TEXT, AGE TEXT, DOB TEXT, BIRTHPLACE TEXT, ADDRESS TEXT, CONTACT TEXT, EMAIL TEXT, FATHERNAME TEXT, FOCCUPATION TEXT, MOTHERNAME TEXT, MOCCUPATION TEXT, ELEMNAME TEXT, ELEMADD TEXT, HIGHNAME TEXT, HIGHADD TEXT, COURSE TEXT, SUBJECTS TEXT, MOP TEXT, INSTALLMENT TEXT, YEAR TEXT)");
+        db.execSQL("CREATE TABLE " + student_table_name + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, LNAME TEXT, FNAME TEXT, MNAME TEXT, AGE TEXT, DOB TEXT, BIRTHPLACE TEXT, ADDRESS TEXT, CONTACT TEXT, EMAIL TEXT, FATHERNAME TEXT, FOCCUPATION TEXT, MOTHERNAME TEXT, MOCCUPATION TEXT, JUNIORNAME TEXT, JUNIORADD TEXT, SENIORNAME TEXT, SENIORADD TEXT, COURSE TEXT, MOP TEXT, KINDOFINSTALLMENT TEXT, YEAR TEXT,PASSWORD TEXT,BALANCE TEXT)");
         db.execSQL("INSERT INTO "+student_table_name+" (ID) VALUES (2021000)");
     }
 
@@ -29,7 +29,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + student_table_name);
     }
 
-    public boolean insertNewStudent(String lName, String fName, String mName, String age, String dob, String birthP, String address, String contact, String email, String fatherName, String fOccupation, String motherName, String mOccupation, String elemName, String elemAdd, String highName, String highAdd, String course, String subject, String mop, String installment, String year) {
+    public boolean insertNewStudent(String lName, String fName, String mName, String age, String dob, String birthP, String address, String contact, String email, String fatherName, String fOccupation, String motherName, String mOccupation, String juniorName, String juniorAdd, String seniorName, String seniorAdd, String course, String mop, String kindofinstallment, String year,String password,String balance) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("LNAME", lName);
@@ -45,15 +45,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put("FOCCUPATION", fOccupation);
         contentValues.put("MOTHERNAME", motherName);
         contentValues.put("MOCCUPATION", mOccupation);
-        contentValues.put("ELEMNAME", elemName);
-        contentValues.put("ELEMADD", elemAdd);
-        contentValues.put("HIGHNAME", highName);
-        contentValues.put("HIGHADD", highAdd);
+        contentValues.put("JUNIORNAME", juniorName);
+        contentValues.put("JUNIORADD", juniorAdd);
+        contentValues.put("SENIORNAME", seniorName);
+        contentValues.put("SENIORADD", seniorAdd);
         contentValues.put("COURSE", course);
-        contentValues.put("SUBJECT", subject);
         contentValues.put("MOP",mop);
-        contentValues.put("INSTALLMENT",installment);
+        contentValues.put("KINDOFINSTALLMENT",kindofinstallment);
         contentValues.put("YEAR",year);
+        contentValues.put("PASSWORD",password);
+        contentValues.put("BALANCE",balance);
         long result = db.insert(student_table_name, null, contentValues);
         if (result == -1) {
             return false;

@@ -171,23 +171,23 @@ public class RegistrationActivity extends AppCompatActivity {
         regBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                lName = lnametxt.getText().toString();
-                fName = fnametxt.getText().toString();
-                mName = mnametxt.getText().toString();
-                age = agetxt.getText().toString();
-                dob = dobTxt.getText().toString();
-                birthP = birthplacetxt.getText().toString();
-                address = addresstxt.getText().toString();
-                ContactNum = contact.getText().toString();
-                EmailAdd = email.getText().toString();
-                FatherName = fatherName.getText().toString();
-                FatherOccupation = fOccupation.getText().toString();
-                MotherName = motherName.getText().toString();
-                MotherOccupation = mOccupation.getText().toString();
-                JuniorName = juniorName.getText().toString();
-                JuniorAdd = juniorAdd.getText().toString();
-                SeniorName = seniorName.getText().toString();
-                SeniorAdd = seniorAdd.getText().toString();
+                lName = lnametxt.getText().toString().trim();
+                fName = fnametxt.getText().toString().trim();
+                mName = mnametxt.getText().toString().trim();
+                age = agetxt.getText().toString().trim();
+                dob = dobTxt.getText().toString().trim();
+                birthP = birthplacetxt.getText().toString().trim();
+                address = addresstxt.getText().toString().trim();
+                ContactNum = contact.getText().toString().trim();
+                EmailAdd = email.getText().toString().trim();
+                FatherName = fatherName.getText().toString().trim();
+                FatherOccupation = fOccupation.getText().toString().trim();
+                MotherName = motherName.getText().toString().trim();
+                MotherOccupation = mOccupation.getText().toString().trim();
+                JuniorName = juniorName.getText().toString().trim();
+                JuniorAdd = juniorAdd.getText().toString().trim();
+                SeniorName = seniorName.getText().toString().trim();
+                SeniorAdd = seniorAdd.getText().toString().trim();
 
                 if (TextUtils.isEmpty(lName)){
                     lnametxt.setError("Required");
@@ -206,7 +206,7 @@ public class RegistrationActivity extends AppCompatActivity {
                         else{
                             if (TextUtils.isEmpty(dob)) {
                                 dobTxt.setError("Required");
-                                dobTxt.requestFocus();
+                                Toast.makeText(RegistrationActivity.this,"Date of Birth is empty",Toast.LENGTH_SHORT).show();
                             }
                             else{
                                 if (TextUtils.isEmpty(birthP)) {

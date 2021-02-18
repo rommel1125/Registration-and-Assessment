@@ -60,6 +60,7 @@
         android:paddingLeft="20dp"
         android:paddingBottom="20dp">
         <Button
+            android:id="@+id/oldStudBtn"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
@@ -67,7 +68,7 @@
             android:textSize="10dp"
             android:text="OLD STUDENT REGISTRATION"/>
         <Button
-            android:id="@+id/registerBtn"
+            android:id="@+id/newStudBtn"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"

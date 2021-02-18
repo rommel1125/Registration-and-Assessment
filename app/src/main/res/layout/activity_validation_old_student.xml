@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/toolbarbg"
+    tools:context=".ValidationOldStudentActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar"
+        android:background="#6E5125"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:title="OLD STUDENT"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="30dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/layout_bg">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+                <EditText
+                    android:id="@+id/studID"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Student ID"
+                    android:textSize="20dp"
+                    android:inputType="number"
+                    android:maxLines="1" />
+                <EditText
+                    android:id="@+id/studPass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Password"
+                    android:textSize="20dp"
+                    android:maxLines="1"
+                    android:inputType="textPassword"/>
+                <Button
+                    android:id="@+id/validateBtn"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="VALIDATE"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
