@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -27,16 +29,18 @@ import java.util.List;
 
 public class RegistrationActivity extends AppCompatActivity {
 
-    private EditText lnametxt,fnametxt,mnametxt,agetxt,birthplacetxt,dobtxt,addresstxt, contact, email, fatherName, fOccupation, motherName, mOccupation, elemName, elemAdd, highName, highAdd, subject;
+    private EditText lnametxt,fnametxt,mnametxt,agetxt,birthplacetxt,addresstxt, contact, email, fatherName, fOccupation, motherName, mOccupation, juniorName, juniorAdd, seniorName, seniorAdd, subject;
     private DatePickerDialog.OnDateSetListener onDateSetListener;
     private Button regBtn;
-    TextView tryLang, dobTxt;
+    private TextView tryLang, dobTxt;
     private ImageView imageView;
     private ImagePopup imagePopup;
     private Toolbar toolbar;
     private Spinner spinner;
-    public String lName, fName, mName, age, birthP, dob, address, ContactNum, EmailAdd, FatherName, FatherOccupation, MotherName, MotherOccupation, ElemName, ElemAdd, HighName, HighAdd, Subject;
+    public String lName, fName, mName, age, birthP, dob, address, ContactNum, EmailAdd, FatherName, FatherOccupation, MotherName, MotherOccupation, JuniorName, JuniorAdd, SeniorName, SeniorAdd, Subject;
     public String course = "Choose course";
+    public int studID;
+    private DatabaseHelper databaseHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +50,8 @@ public class RegistrationActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        databaseHelper =new DatabaseHelper(this);
 
         lnametxt = findViewById(R.id.lnametxt);
         fnametxt = findViewById(R.id.fnametxt);
@@ -60,10 +66,10 @@ public class RegistrationActivity extends AppCompatActivity {
         fOccupation = findViewById(R.id.fOccupationTxt);
         motherName = findViewById(R.id.mothersNameTxt);
         mOccupation = findViewById(R.id.mOccupationTxt);
-        elemName = findViewById(R.id.ElemTxt);
-        elemAdd = findViewById(R.id.ElemAddTxt);
-        highName = findViewById(R.id.HighTxt);
-        highAdd = findViewById(R.id.HighAddTxt);
+        juniorName = findViewById(R.id.JuniorTxt);
+        juniorAdd = findViewById(R.id.JuniorAddTxt);
+        seniorName = findViewById(R.id.SeniorTxt);
+        seniorAdd = findViewById(R.id.SeniorAddTxt);
 
         spinner = findViewById(R.id.spinner);
         regBtn = findViewById(R.id.regBtn);
@@ -178,10 +184,10 @@ public class RegistrationActivity extends AppCompatActivity {
                 FatherOccupation = fOccupation.getText().toString();
                 MotherName = motherName.getText().toString();
                 MotherOccupation = mOccupation.getText().toString();
-                ElemName = elemName.getText().toString();
-                ElemAdd = elemAdd.getText().toString();
-                HighName = highName.getText().toString();
-                HighAdd = highAdd.getText().toString();
+                JuniorName = juniorName.getText().toString();
+                JuniorAdd = juniorAdd.getText().toString();
+                SeniorName = seniorName.getText().toString();
+                SeniorAdd = seniorAdd.getText().toString();
 
                 if (TextUtils.isEmpty(lName)){
                     lnametxt.setError("Required");
@@ -223,32 +229,85 @@ public class RegistrationActivity extends AppCompatActivity {
                                                 email.requestFocus();
                                             }
                                             else{
-                                                if (TextUtils.isEmpty(ElemName)) {
-                                                    elemName.setError("Required");
-                                                    elemName.requestFocus();
+                                                if (TextUtils.isEmpty(FatherName)) {
+                                                    fatherName.setError("Required");
+                                                    fatherName.requestFocus();
                                                 }
                                                 else{
-                                                    if (TextUtils.isEmpty(ElemAdd)) {
-                                                        elemAdd.setError("Required");
-                                                        elemAdd.requestFocus();
+                                                    if (TextUtils.isEmpty(FatherOccupation)) {
+                                                        fOccupation.setError("Required");
+                                                        fOccupation.requestFocus();
                                                     }
                                                     else{
-                                                        if (TextUtils.isEmpty(HighName)) {
-                                                            highName.setError("Required");
-                                                            highName.requestFocus();
+                                                        if (TextUtils.isEmpty(MotherName)) {
+                                                            motherName.setError("Required");
+                                                            motherName.requestFocus();
                                                         }
                                                         else{
-                                                            if (TextUtils.isEmpty(HighAdd)) {
-                                                                highAdd.setError("Required");
-                                                                highAdd.requestFocus();
+                                                            if (TextUtils.isEmpty(MotherOccupation)) {
+                                                                mOccupation.setError("Required");
+                                                                mOccupation.requestFocus();
                                                             }
                                                             else{
-                                                                if (course == "Choose course") {
-                                                                    Toast.makeText(RegistrationActivity.this,course,Toast.LENGTH_SHORT).show();
-                                                                    TextView errorText = (TextView)spinner.getSelectedView();
-                                                                    errorText.setError("");
-                                                                    errorText.setTextColor(Color.RED);//just to highlight that this is an error
-                                                                    errorText.setText("Required");
+                                                                if (TextUtils.isEmpty(JuniorName)) {
+                                                                    juniorName.setError("Required");
+                                                                    juniorName.requestFocus();
+                                                                }
+                                                                else{
+                                                                    if (TextUtils.isEmpty(JuniorAdd)) {
+                                                                        juniorAdd.setError("Required");
+                                                                        juniorAdd.requestFocus();
+                                                                    }
+                                                                    else{
+                                                                        if (TextUtils.isEmpty(SeniorName)) {
+                                                                            seniorName.setError("Required");
+                                                                            seniorName.requestFocus();
+                                                                        }
+                                                                        else{
+                                                                            if (TextUtils.isEmpty(SeniorAdd)) {
+                                                                                seniorAdd.setError("Required");
+                                                                                seniorAdd.requestFocus();
+                                                                            }
+                                                                            else{
+                                                                                if (course == "Choose course") {
+                                                                                    Toast.makeText(RegistrationActivity.this,course,Toast.LENGTH_SHORT).show();
+                                                                                    TextView errorText = (TextView)spinner.getSelectedView();
+                                                                                    errorText.setError("");
+                                                                                    errorText.setTextColor(Color.RED);//just to highlight that this is an error
+                                                                                    errorText.setText("Required");
+                                                                                }
+                                                                                else {
+                                                                                    Intent myIntent = new Intent(RegistrationActivity.this, AssessmentActivity.class);
+                                                                                    myIntent.putExtra("lName", lName);
+                                                                                    myIntent.putExtra("fName", fName);
+                                                                                    myIntent.putExtra("mName",mName);
+                                                                                    myIntent.putExtra("age",age);
+                                                                                    myIntent.putExtra("dob",dob);
+                                                                                    myIntent.putExtra("birthP",birthP);
+                                                                                    myIntent.putExtra("address",address);
+                                                                                    myIntent.putExtra("ContactNum",ContactNum);
+                                                                                    myIntent.putExtra("EmailAdd",EmailAdd);
+                                                                                    myIntent.putExtra("FatherName",FatherName);
+                                                                                    myIntent.putExtra("FatherOccupation",FatherOccupation);
+                                                                                    myIntent.putExtra("MotherName",MotherName);
+                                                                                    myIntent.putExtra("MotherOccupation",MotherOccupation);
+                                                                                    myIntent.putExtra("JuniorName",JuniorName);
+                                                                                    myIntent.putExtra("JuniorAdd",JuniorAdd);
+                                                                                    myIntent.putExtra("SeniorName",SeniorName);
+                                                                                    myIntent.putExtra("SeniorAdd",SeniorAdd);
+                                                                                    myIntent.putExtra("course",course);
+
+                                                                                    Cursor cursor = databaseHelper.getID();
+                                                                                    while (cursor.moveToNext()) {
+                                                                                        studID = cursor.getInt(0);
+                                                                                    }
+                                                                                    myIntent.putExtra("studID",studID);
+
+                                                                                    startActivity(myIntent);
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
                                                                 }
                                                             }
                                                         }

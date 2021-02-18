@@ -5,8 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RegistrationActivity"
-    android:background="#E9EBEE"
+    android:background="@drawable/toolbarbg"
     android:orientation="vertical">
+
 <androidx.appcompat.widget.Toolbar
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -16,11 +17,13 @@
     app:title="REGISTRATION"/>
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="30dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="@drawable/gradiant2">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -59,6 +62,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
+                android:maxLength="2"
                 android:hint="Age"
                 android:inputType="number"/>
             <TextView
@@ -101,7 +105,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="PARENT INFO"
+            android:text="GUARDIAN INFO"
             android:fontFamily="sans-serif-medium"
             android:layout_marginTop="10dp"
             android:gravity="center"
@@ -133,8 +137,6 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
                 android:hint="Occupation"/>
-
-
             <TextView
                 android:layout_marginTop="30dp"
                 android:layout_width="match_parent"
@@ -178,15 +180,15 @@
                 android:layout_marginTop="10dp"
                 android:fontFamily="sans-serif-condensed"
                 android:textSize="15dp"
-                android:text="Secondary Education"/>
+                android:text="Junior High School"/>
             <EditText
-                android:id="@+id/ElemTxt"
+                android:id="@+id/JuniorTxt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
                 android:hint="School Name"/>
             <EditText
-                android:id="@+id/ElemAddTxt"
+                android:id="@+id/JuniorAddTxt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
@@ -199,15 +201,15 @@
                 android:textColor="@color/black"
                 android:fontFamily="sans-serif-condensed"
                 android:textSize="15dp"
-                android:text="Higher Secondary Education"/>
+                android:text="Senior High School"/>
             <EditText
-                android:id="@+id/HighTxt"
+                android:id="@+id/SeniorTxt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
                 android:hint="School Name"/>
             <EditText
-                android:id="@+id/HighAddTxt"
+                android:id="@+id/SeniorAddTxt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
@@ -237,12 +239,6 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/bsit"
                 android:scaleType="fitCenter" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="10dp">
             <Button
                 android:layout_marginTop="50dp"
                 android:id="@+id/regBtn"
@@ -252,4 +248,5 @@
         </LinearLayout>
     </LinearLayout>
     </ScrollView>
+
 </LinearLayout>
