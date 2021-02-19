@@ -21,7 +21,7 @@
         android:padding="30dp">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="280dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:background="@drawable/layout_bg">
     <LinearLayout
@@ -29,27 +29,46 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="20dp">
-        <EditText
-            android:id="@+id/studID"
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Student ID"
+            android:fontFamily="sans-serif-medium"
+            android:text="LOGIN"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
             android:textSize="20dp"
-            android:inputType="number"
-            android:maxLines="1" />
-        <EditText
-            android:id="@+id/studPass"
+            android:textColor="@color/black"/>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_marginTop="20dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Password"
-            android:textSize="20dp"
-            android:maxLines="1"
-            android:inputType="textPassword"/>
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/studID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:textSize="15dp"
+                android:hint="Student ID"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_marginTop="5dp"
+            app:passwordToggleEnabled="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/studPass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:textSize="15dp"
+                android:hint="Password"/>
+        </com.google.android.material.textfield.TextInputLayout>
         <Button
             android:id="@+id/loginBtn"
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/sand"
             android:text="LOGIN"/>
     </LinearLayout>
     <LinearLayout
@@ -66,6 +85,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="20dp"
             android:textSize="10dp"
+            android:backgroundTint="@color/sand"
             android:text="OLD STUDENT REGISTRATION"/>
         <Button
             android:id="@+id/newStudBtn"
@@ -73,6 +93,7 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:textSize="10dp"
+            android:backgroundTint="@color/sand"
             android:text="NEW STUDENT REGISTRATION"/>
     </LinearLayout>
     </LinearLayout>

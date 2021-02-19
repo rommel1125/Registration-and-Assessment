@@ -81,7 +81,7 @@ public class RegistrationActivity extends AppCompatActivity {
         categories.add("BSA - Bachelor of Science in Accountancy");
         categories.add("BSBA - Bachelor of Science in Business Administration");
         categories.add("BEEd - Bachelor of Elementary Education");
-        categories.add("BSEd - Bachelor of Secondary Education");
+        categories.add("BSEd - Bachelor of Secondary Education major in English");
 
 
         ArrayAdapter<String> dataAdapter;
@@ -117,7 +117,6 @@ public class RegistrationActivity extends AppCompatActivity {
                     if (course.equals("BSIT - Bachelor of Science in Information Technology")){
                         imageView.setImageResource(R.drawable.bsit);
                         imagePopup.initiatePopup(imageView.getDrawable());
-
                     }
                     else if (course.equals("BSA - Bachelor of Science in Accountancy")){
                         imageView.setImageResource(R.drawable.bsa);
@@ -131,7 +130,7 @@ public class RegistrationActivity extends AppCompatActivity {
                         imageView.setImageResource(R.drawable.beed);
                         imagePopup.initiatePopup(imageView.getDrawable());
                     }
-                    else if (course.equals("BSEd - Bachelor of Secondary Education")){
+                    else if (course.equals("BSEd - Bachelor of Secondary Education major in English")){
                         imageView.setImageResource(R.drawable.bsed);
                         imagePopup.initiatePopup(imageView.getDrawable());
                     }

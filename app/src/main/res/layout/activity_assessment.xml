@@ -23,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@drawable/gradiant2"
+            android:background="@drawable/layout_bg"
             android:padding="20dp">
             <LinearLayout
                 android:layout_width="match_parent"
@@ -166,6 +166,15 @@
                     android:fontFamily="sans-serif-condensed"
                     android:layout_marginLeft="20dp"
                     android:text="1ST YEAR"/>
+                <TextView
+                    android:id="@+id/studSem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:layout_marginLeft="20dp"
+                    android:text="1ST SEM"/>
             </LinearLayout>
             <ImageView
                 android:id="@+id/studSub"
@@ -253,6 +262,7 @@
                 android:id="@+id/continueBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/sand"
                 android:text="CONTINUE"/>
         </LinearLayout>
         </LinearLayout>

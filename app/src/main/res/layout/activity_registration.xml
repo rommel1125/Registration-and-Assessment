@@ -15,6 +15,7 @@
     android:background="#6E5125"
     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
     app:title="REGISTRATION"/>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -23,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:background="@drawable/gradiant2">
+            android:background="@drawable/layout_bg">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -244,6 +245,7 @@
                 android:id="@+id/regBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/sand"
                 android:text="REGISTER"/>
         </LinearLayout>
     </LinearLayout>

@@ -29,10 +29,10 @@ import java.util.List;
 
 public class AssessmentActivity extends AppCompatActivity {
 
-    public String lName, fName, mName, age, birthP, dob, address, ContactNum, EmailAdd, FatherName, FatherOccupation, MotherName, MotherOccupation, JuniorName, JuniorAdd, SeniorName, SeniorAdd,course, StudID, year,balance;
+    public String lName, fName, mName, age, birthP, dob, address, ContactNum, EmailAdd, FatherName, FatherOccupation, MotherName, MotherOccupation, JuniorName, JuniorAdd, SeniorName, SeniorAdd,course, StudID, year,balance, sem;
     public int student, selectedID;
     public double tuitionFee = 10000, semestral = 0, quarterly = 0, monthly = 0;
-    private TextView studID,studName,studCourse,studYear, SQM, totalTxt,mop;
+    private TextView studID,studName,studCourse,studYear, SQM, totalTxt,mop,SEM;
     private EditText password,ConfirmPassword;
     private Toolbar toolbar;
     private Button continueBtn;
@@ -73,9 +73,10 @@ public class AssessmentActivity extends AppCompatActivity {
         ConfirmPassword = findViewById(R.id.confirmPassword);
         mop = findViewById(R.id.mop);
         studYear = findViewById(R.id.studYear);
+        SEM = findViewById(R.id.studSem);
         installChoice.setEnabled(false);
 
-        //INTENTS
+        //RECEIVE INTENTS
         Intent intent = getIntent();
         lName = intent.getStringExtra("lName");
         fName = intent.getStringExtra("fName");
@@ -210,7 +211,7 @@ public class AssessmentActivity extends AppCompatActivity {
             studSub.setImageResource(R.drawable.beed);
             imagePopup.initiatePopup(studSub.getDrawable());
         }
-        else if (studCourse.getText().toString().equals("BSEd - Bachelor of Secondary Education")){
+        else if (studCourse.getText().toString().equals("BSEd - Bachelor of Secondary Education major in English")){
             studSub.setImageResource(R.drawable.bsed);
             imagePopup.initiatePopup(studSub.getDrawable());
         }
@@ -235,6 +236,7 @@ public class AssessmentActivity extends AppCompatActivity {
             else{
 
                 balance = totalTxt.getText().toString();
+                sem = SEM.getText().toString();
                 AlertDialog.Builder alert = new AlertDialog.Builder(this);
                 alert.setTitle("Confirm Registration")
                         .setMessage("Please remember your \"Student ID\" and your \"Password\" you need them to login\n\n\nTo Continue click \"YES\"")
@@ -242,7 +244,7 @@ public class AssessmentActivity extends AppCompatActivity {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
 //INSERT DATA
-                                Boolean checkinsert = databaseHelper.insertNewStudent(lName,fName,mName,age,dob,birthP,address,ContactNum,EmailAdd,FatherName,FatherOccupation,MotherName,MotherOccupation,JuniorName,JuniorAdd,SeniorName,SeniorAdd,course,ModeOfPayment,kindofinstallment,year,passwordInput,balance);
+                                Boolean checkinsert = databaseHelper.insertNewStudent(lName,fName,mName,age,dob,birthP,address,ContactNum,EmailAdd,FatherName,FatherOccupation,MotherName,MotherOccupation,JuniorName,JuniorAdd,SeniorName,SeniorAdd,course,ModeOfPayment,kindofinstallment,year,passwordInput,balance,sem);
                                 if (checkinsert == true){
                                     Toast.makeText(AssessmentActivity.this,"Registered Successfully",Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(AssessmentActivity.this,MainActivity.class);

@@ -9,8 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RegistrationAndAssessment">
-        <activity android:name=".ValidationOldStudentActivity"
-            android:parentActivityName=".ValidationOldStudentActivity"></activity>
+        <activity android:name=".OldStudentAssessmentActivity"></activity>
+        <activity android:name=".StudentActivity" />
+        <activity
+            android:name=".ValidationOldStudentActivity"
+            android:parentActivityName=".ValidationOldStudentActivity" />
         <activity
             android:name=".AssessmentActivity"
             android:parentActivityName=".AssessmentActivity" />
