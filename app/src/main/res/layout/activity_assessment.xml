@@ -224,11 +224,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-condensed"
+                    android:textColor="@color/black"
                     android:text="CASH"/>
                 <RadioButton
                     android:id="@+id/rbInstallment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/black"
                     android:fontFamily="sans-serif-condensed"
                     android:text="INSTALLMENT"/>
                 <Spinner

@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/toolbarbg"
     tools:context=".OldStudentAssessmentActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -13,6 +14,247 @@
         android:id="@+id/toolbar"
         android:background="#6E5125"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:title="OLD STUDENT"/>
+        app:title="ASSESSMENT"/>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="30dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/layout_bg"
+        android:padding="20dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Student ID: "/>
+            <TextView
+                android:id="@+id/oldID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:fontFamily="sans-serif-condensed"
+                android:layout_marginLeft="21dp"
+                android:text="2021000"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Name: "/>
+            <TextView
+                android:id="@+id/oldNAME"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:fontFamily="sans-serif-condensed"
+                android:layout_marginLeft="50dp"
+                android:text="Sample, Sample sample"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Course: "/>
+            <TextView
+                android:id="@+id/oldCOURSE"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:fontFamily="sans-serif-condensed"
+                android:layout_marginLeft="41dp"
+                android:text="BSIT - Bachelor of Science in Information Technology"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="17dp"
+                android:fontFamily="sans-serif-black"
+                android:text="YEAR/SEMESTER:"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Current:"/>
+            <TextView
+                android:id="@+id/oldYEAR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:fontFamily="sans-serif-condensed"
+                android:layout_marginLeft="58dp"
+                android:text="1ST YEAR"/>
+            <TextView
+                android:id="@+id/oldSEM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:fontFamily="sans-serif-condensed"
+                android:layout_marginLeft="20dp"
+                android:text="1ST SEM"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="New: "/>
+            <TextView
+                android:id="@+id/newYEAR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:fontFamily="sans-serif-condensed"
+                android:layout_marginLeft="74dp"
+                android:text="1ST YEAR"/>
+            <TextView
+                android:id="@+id/newSEM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:fontFamily="sans-serif-condensed"
+                android:layout_marginLeft="20dp"
+                android:text="1ST SEM"/>
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/newSUBJECT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/empty"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Tuition Fee: "/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:fontFamily="sans-serif-condensed"
+                android:layout_marginLeft="61dp"
+                android:text="₱ 10,000"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/mopTXT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif-medium"
+                style="@android:style/Widget.EditText"
+                android:text="MODE OF PAYMENT"/>
+            <RadioGroup
+                android:id="@+id/mopGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:id="@+id/rbCASH"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="CASH"/>
+                <RadioButton
+                    android:id="@+id/rbINSTALLMENT"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="INSTALLMENT"/>
+                <Spinner
+                    android:id="@+id/spinnerInstallment"
+                    android:layout_width="match_parent"
+                    android:fontFamily="sans-serif-condensed"
+                    android:layout_height="30dp"/>
+            </RadioGroup>
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/SemQuaMon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:fontFamily="sans-serif-condensed"/>
+                <TextView
+                    android:id="@+id/totalTXT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="49dp"/>
+            </LinearLayout>
+        </LinearLayout>
+        <Button
+            android:layout_marginTop="100dp"
+            android:id="@+id/continueBTN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/sand"
+            android:text="CONTINUE"/>
+    </LinearLayout>
+    </ScrollView>
 </LinearLayout>

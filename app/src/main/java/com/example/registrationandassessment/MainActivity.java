@@ -74,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
                             startActivity(intent);
                         }
                         else {
-                            studID.setText("");
                             studPass.setText("");
                             studID.setError("Student does not exists");
                             studID.requestFocus();

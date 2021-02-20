@@ -2,6 +2,9 @@ package com.example.registrationandassessment;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
+import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -16,6 +19,10 @@ public class ValidationOldStudentActivity extends AppCompatActivity {
     private DatabaseHelper databaseHelper;
     private String password;
     private int StudentID;
+
+//OLD STUDENT VARIABLES
+    private int oldID;
+    private String oldLNAME,oldFNAME,oldMNAME,oldCOURSE,oldMODE,oldKIND,oldYEAR,oldBAL,oldSEM;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +58,31 @@ public class ValidationOldStudentActivity extends AppCompatActivity {
                     else{
                         password = studPASSTXT.getText().toString().trim();
                         if (databaseHelper.login(StudentID,password)){
-                            //
+                            Intent intent = new Intent(ValidationOldStudentActivity.this,OldStudentAssessmentActivity.class);
+                            Cursor cursor = databaseHelper.getData(StudentID);
+                 //GETTING DATA OF OLD STUDENT
+                            while(cursor.moveToNext()){
+                                oldID = cursor.getInt(0);
+                                oldLNAME = cursor.getString(1);
+                                oldFNAME = cursor.getString(2);
+                                oldMNAME = cursor.getString(3);
+                                oldCOURSE = cursor.getString(18);
+                                oldYEAR = cursor.getString(21);
+                                oldSEM = cursor.getString(24);
+                            }
+                            intent.putExtra("oldID",oldID);
+                            intent.putExtra("oldLNAME",oldLNAME);
+                            intent.putExtra("oldFNAME",oldFNAME);
+                            intent.putExtra("oldMNAME",oldMNAME);
+                            intent.putExtra("oldCOURSE",oldCOURSE);
+                            intent.putExtra("oldYEAR",oldYEAR);
+                            intent.putExtra("oldSEM",oldSEM);
+                            startActivity(intent);
+                        }
+                        else {
+                            studPASSTXT.setText("");
+                            studIDTXT.setError("Student does not exists");
+                            studIDTXT.requestFocus();
                         }
                     }
                 }

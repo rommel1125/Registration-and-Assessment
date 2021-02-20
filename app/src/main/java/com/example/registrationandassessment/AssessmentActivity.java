@@ -57,7 +57,7 @@ public class AssessmentActivity extends AppCompatActivity {
         databaseHelper = new DatabaseHelper(this);
 
 
-        //FIND VIEW BY ID
+//FIND VIEW BY ID
         studID = findViewById(R.id.studID);
         studName = findViewById(R.id.studName);
         studCourse = findViewById(R.id.studCourse);
@@ -76,7 +76,7 @@ public class AssessmentActivity extends AppCompatActivity {
         SEM = findViewById(R.id.studSem);
         installChoice.setEnabled(false);
 
-        //RECEIVE INTENTS
+//RECEIVE INTENTS
         Intent intent = getIntent();
         lName = intent.getStringExtra("lName");
         fName = intent.getStringExtra("fName");

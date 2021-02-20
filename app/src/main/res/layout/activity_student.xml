@@ -144,7 +144,7 @@
                     android:textColor="@color/black"
                     android:textSize="15dp"
                     android:fontFamily="sans-serif-condensed"
-                    android:layout_marginLeft="76dp"
+                    android:layout_marginLeft="70dp"
                     android:text="₱ 10,000"/>
             </LinearLayout>
             <LinearLayout
@@ -166,7 +166,7 @@
                     android:textColor="@color/black"
                     android:textSize="15dp"
                     android:fontFamily="sans-serif-condensed"
-                    android:layout_marginLeft="30dp"
+                    android:layout_marginLeft="24dp"
                     android:text="INSTALLMENT"/>
             </LinearLayout>
             <LinearLayout
@@ -180,7 +180,7 @@
                     android:textColor="@color/black"
                     android:textSize="15dp"
                     android:fontFamily="sans-serif-medium"
-                    android:text="Balance: "/>
+                    android:text=""/>
                 <TextView
                     android:id="@+id/studBAL"
                     android:layout_width="wrap_content"
@@ -188,7 +188,7 @@
                     android:textColor="@color/black"
                     android:textSize="15dp"
                     android:fontFamily="sans-serif-condensed"
-                    android:layout_marginLeft="96dp"
+                    android:layout_marginLeft="150dp"
                     android:text="₱ 5000.00 per semester"/>
             </LinearLayout>
             <Button
@@ -196,6 +196,7 @@
                 android:id="@+id/logoutBTN"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/sand"
                 android:text="LOGOUT"/>
         </LinearLayout>
     </ScrollView>
