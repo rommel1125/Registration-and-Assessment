@@ -123,7 +123,7 @@
                 android:textSize="15dp"
                 android:fontFamily="sans-serif-condensed"
                 android:layout_marginLeft="58dp"
-                android:text="1ST YEAR"/>
+                android:text=""/>
             <TextView
                 android:id="@+id/oldSEM"
                 android:layout_width="wrap_content"
@@ -132,7 +132,7 @@
                 android:textSize="15dp"
                 android:fontFamily="sans-serif-condensed"
                 android:layout_marginLeft="20dp"
-                android:text="1ST SEM"/>
+                android:text=""/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -154,7 +154,7 @@
                 android:textSize="15dp"
                 android:fontFamily="sans-serif-condensed"
                 android:layout_marginLeft="74dp"
-                android:text="1ST YEAR"/>
+                android:text=""/>
             <TextView
                 android:id="@+id/newSEM"
                 android:layout_width="wrap_content"
@@ -163,7 +163,7 @@
                 android:textSize="15dp"
                 android:fontFamily="sans-serif-condensed"
                 android:layout_marginLeft="20dp"
-                android:text="1ST SEM"/>
+                android:text=""/>
         </LinearLayout>
         <ImageView
             android:id="@+id/newSUBJECT"

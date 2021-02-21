@@ -17,7 +17,7 @@ import com.ceylonlabs.imageviewpopup.ImagePopup;
 public class StudentActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
-    private TextView studId,studName,studCourse,studYear,studSem,studMode,studBal;
+    private TextView studId,studName,studCourse,studYear,studSem,studMode,studBal,eduBack,TuitionTXT,pera,mopWALA;
     private String studLNAME,studFNAME,studMNAME,studCOURSE,studYEAR,studSEM,studMODE,studBAL;
     private ImageView imageView;
     private int studID;
@@ -39,6 +39,11 @@ public class StudentActivity extends AppCompatActivity {
         studBal = findViewById(R.id.studBAL);
         imageView = findViewById(R.id.studSUBJECT);
         logoutBTN = findViewById(R.id.logoutBTN);
+        eduBack = findViewById(R.id.eduBack);
+        TuitionTXT = findViewById(R.id.TuitionTXT);
+        pera = findViewById(R.id.pera);
+        mopWALA = findViewById(R.id.mopWALA);
+
 
 //GET INTENT
         Intent intent = getIntent();
@@ -152,6 +157,14 @@ public class StudentActivity extends AppCompatActivity {
             }
             else{
                 //GRADUATE
+                if(studYear.getText().toString().equals("GRADUATE")){
+                    eduBack.setText("");
+                    TuitionTXT.setText("");
+                    pera.setText("");
+                    mopWALA.setText("");
+                    studMode.setText("");
+                    studBal.setText("");
+                }
             }
 
         }
@@ -207,7 +220,14 @@ public class StudentActivity extends AppCompatActivity {
                 }
             }
             else{
-                //GRADUATE
+                if(studYear.getText().toString().equals("GRADUATE")){
+                    eduBack.setText("");
+                    TuitionTXT.setText("");
+                    pera.setText("");
+                    mopWALA.setText("");
+                    studMode.setText("");
+                    studBal.setText("");
+                }
             }
         }
 
@@ -263,6 +283,14 @@ public class StudentActivity extends AppCompatActivity {
             }
             else{
                 //GRADUATE
+                if(studYear.getText().toString().equals("GRADUATE")){
+                    eduBack.setText("");
+                    TuitionTXT.setText("");
+                    pera.setText("");
+                    mopWALA.setText("");
+                    studMode.setText("");
+                    studBal.setText("");
+                }
             }
         }
 
@@ -318,6 +346,14 @@ public class StudentActivity extends AppCompatActivity {
             }
             else{
                 //GRADUATE
+                if(studYear.getText().toString().equals("GRADUATE")){
+                    eduBack.setText("");
+                    TuitionTXT.setText("");
+                    pera.setText("");
+                    mopWALA.setText("");
+                    studMode.setText("");
+                    studBal.setText("");
+                }
             }
         }
 
@@ -373,6 +409,14 @@ public class StudentActivity extends AppCompatActivity {
             }
             else{
                 //GRADUATE
+                if(studYear.getText().toString().equals("GRADUATE")){
+                    eduBack.setText("");
+                    TuitionTXT.setText("");
+                    pera.setText("");
+                    mopWALA.setText("");
+                    studMode.setText("");
+                    studBal.setText("");
+                }
             }
         }
     }

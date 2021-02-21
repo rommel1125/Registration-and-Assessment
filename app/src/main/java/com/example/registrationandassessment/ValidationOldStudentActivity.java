@@ -1,8 +1,10 @@
 package com.example.registrationandassessment;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -58,7 +60,6 @@ public class ValidationOldStudentActivity extends AppCompatActivity {
                     else{
                         password = studPASSTXT.getText().toString().trim();
                         if (databaseHelper.login(StudentID,password)){
-                            Intent intent = new Intent(ValidationOldStudentActivity.this,OldStudentAssessmentActivity.class);
                             Cursor cursor = databaseHelper.getData(StudentID);
                  //GETTING DATA OF OLD STUDENT
                             while(cursor.moveToNext()){
@@ -70,14 +71,30 @@ public class ValidationOldStudentActivity extends AppCompatActivity {
                                 oldYEAR = cursor.getString(21);
                                 oldSEM = cursor.getString(24);
                             }
-                            intent.putExtra("oldID",oldID);
-                            intent.putExtra("oldLNAME",oldLNAME);
-                            intent.putExtra("oldFNAME",oldFNAME);
-                            intent.putExtra("oldMNAME",oldMNAME);
-                            intent.putExtra("oldCOURSE",oldCOURSE);
-                            intent.putExtra("oldYEAR",oldYEAR);
-                            intent.putExtra("oldSEM",oldSEM);
-                            startActivity(intent);
+                            if (oldYEAR.equals("GRADUATE")){
+                                AlertDialog.Builder alert = new AlertDialog.Builder(ValidationOldStudentActivity.this);
+                                alert.setTitle("Validation failed");
+                                alert.setMessage("You cannot register, you're already graduated !");
+                                alert.setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        studIDTXT.setText("");
+                                        studPASSTXT.setText("");
+                                        dialog.dismiss();
+                                    }
+                                }).create().show();
+                            }
+                            else {
+                                Intent intent = new Intent(ValidationOldStudentActivity.this, OldStudentAssessmentActivity.class);
+                                intent.putExtra("oldID", oldID);
+                                intent.putExtra("oldLNAME", oldLNAME);
+                                intent.putExtra("oldFNAME", oldFNAME);
+                                intent.putExtra("oldMNAME", oldMNAME);
+                                intent.putExtra("oldCOURSE", oldCOURSE);
+                                intent.putExtra("oldYEAR", oldYEAR);
+                                intent.putExtra("oldSEM", oldSEM);
+                                startActivity(intent);
+                            }
                         }
                         else {
                             studPASSTXT.setText("");

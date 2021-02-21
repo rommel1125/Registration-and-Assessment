@@ -271,6 +271,10 @@ public class OldStudentAssessmentActivity extends AppCompatActivity {
                         break;
                 }
             }
+            else {
+                imageView.setImageResource(R.drawable.empty);
+                mopGROUP.setEnabled(false);
+            }
 
         }
         else if (oldCOURSETXT.getText().toString().equals("BSA - Bachelor of Science in Accountancy")){
