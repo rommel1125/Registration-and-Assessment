@@ -158,7 +158,7 @@ public class StudentActivity extends AppCompatActivity {
             else{
                 //GRADUATE
                 if(studYear.getText().toString().equals("GRADUATE")){
-                    eduBack.setText("");
+                    eduBack.setText("College:");
                     TuitionTXT.setText("");
                     pera.setText("");
                     mopWALA.setText("");
@@ -221,7 +221,7 @@ public class StudentActivity extends AppCompatActivity {
             }
             else{
                 if(studYear.getText().toString().equals("GRADUATE")){
-                    eduBack.setText("");
+                    eduBack.setText("College:");
                     TuitionTXT.setText("");
                     pera.setText("");
                     mopWALA.setText("");
@@ -284,7 +284,7 @@ public class StudentActivity extends AppCompatActivity {
             else{
                 //GRADUATE
                 if(studYear.getText().toString().equals("GRADUATE")){
-                    eduBack.setText("");
+                    eduBack.setText("College:");
                     TuitionTXT.setText("");
                     pera.setText("");
                     mopWALA.setText("");
@@ -347,7 +347,7 @@ public class StudentActivity extends AppCompatActivity {
             else{
                 //GRADUATE
                 if(studYear.getText().toString().equals("GRADUATE")){
-                    eduBack.setText("");
+                    eduBack.setText("College:");
                     TuitionTXT.setText("");
                     pera.setText("");
                     mopWALA.setText("");
@@ -410,7 +410,7 @@ public class StudentActivity extends AppCompatActivity {
             else{
                 //GRADUATE
                 if(studYear.getText().toString().equals("GRADUATE")){
-                    eduBack.setText("");
+                    eduBack.setText("College:");
                     TuitionTXT.setText("");
                     pera.setText("");
                     mopWALA.setText("");

@@ -12,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -35,9 +36,10 @@ public class OldStudentAssessmentActivity extends AppCompatActivity {
     private double tuitionFee = 10000, semestral = 0, quarterly = 0, monthly = 0;
 
 //XML's
-    private TextView oldNAMETXT, oldIDTXT, oldCOURSETXT, oldYEARTXT, oldSEMTXT,newYEARTXT,newSEMTXT,SemQuaMon, totalTXT,mopTXT;
+    private TextView oldNAMETXT, oldIDTXT, oldCOURSETXT, oldYEARTXT, oldSEMTXT,newYEARTXT,newSEMTXT,SemQuaMon, totalTXT,mopTXT,tuiTXT,peraTXT;
     private ImageView imageView;
     private RadioGroup mopGROUP;
+    private RadioButton rbCASH,rbINSTALLMENT;
     private Spinner spinner;
     private ImagePopup imagePopup;
     private Button continueBTN;
@@ -64,6 +66,10 @@ public class OldStudentAssessmentActivity extends AppCompatActivity {
         totalTXT = findViewById(R.id.totalTXT);
         mopTXT = findViewById(R.id.mopTXT);
         continueBTN = findViewById(R.id.continueBTN);
+        tuiTXT = findViewById(R.id.tuiTXT);
+        peraTXT = findViewById(R.id.peraTXT);
+        rbCASH = findViewById(R.id.rbCASH);
+        rbINSTALLMENT = findViewById(R.id.rbINSTALLMENT);
         spinner.setEnabled(false);
 
 //INTENT RECEIVE
@@ -96,6 +102,14 @@ public class OldStudentAssessmentActivity extends AppCompatActivity {
                 imagePopup.viewPopup();
             }
         });
+
+        if (newYEARTXT.getText().toString().equals("GRADUATE")){
+            rbCASH.setClickable(false);
+            rbINSTALLMENT.setClickable(false);
+            tuiTXT.setText("");
+            peraTXT.setText("");
+        }
+
 
 //RADIO GROUP
         mopGROUP.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -140,8 +154,8 @@ public class OldStudentAssessmentActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if (parent.getItemAtPosition(position).equals("Choose Mode")){
                     KINDofINSTALLMENT = "";
-                    SemQuaMon.setText("");
-                    totalTXT.setText("");
+                    SemQuaMon.setText("Payment:");
+                    totalTXT.setText("NONE");
                 }
                 else{
                     if (parent.getItemAtPosition(position).equals("Semestral")){
@@ -180,6 +194,7 @@ public class OldStudentAssessmentActivity extends AppCompatActivity {
                 update();
             }
         });
+
     }
 
 //UPDATE METHOD
@@ -189,32 +204,37 @@ public class OldStudentAssessmentActivity extends AppCompatActivity {
             mopTXT.requestFocus();
         }
         else {
-            balance = totalTXT.getText().toString();
-            sem = newSEMTXT.getText().toString();
-            AlertDialog.Builder alert = new AlertDialog.Builder(this);
-            alert.setTitle("Confirm Registration");
-            alert.setMessage("Please review your payment !\nTo continue click \"YES\"");
-            alert.setPositiveButton("YES", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
+            if (totalTXT.getText().toString().equals("NONE") & newYEARTXT.getText().toString() != "GRADUATE"){
+                mopTXT.setError("Please choose mode of payment");
+                mopTXT.requestFocus();
+            }
+            else {
+                balance = totalTXT.getText().toString();
+                sem = newSEMTXT.getText().toString();
+                AlertDialog.Builder alert = new AlertDialog.Builder(this);
+                alert.setTitle("Confirm Registration");
+                alert.setMessage("Please review your payment !\nTo continue click \"YES\"");
+                alert.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
 
-                    Boolean checkupdate = databaseHelper.updateNewStudent(oldIDTXT.getText().toString(),MODEofPAYMENT,KINDofINSTALLMENT,newYEARTXT.getText().toString(),totalTXT.getText().toString(),newSEMTXT.getText().toString());
-                    if (checkupdate == true){
-                        Toast.makeText(OldStudentAssessmentActivity.this,"Registered Successfully",Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(OldStudentAssessmentActivity.this,MainActivity.class);
-                        startActivity(intent);
+                        Boolean checkupdate = databaseHelper.updateNewStudent(oldIDTXT.getText().toString(), MODEofPAYMENT, KINDofINSTALLMENT, newYEARTXT.getText().toString(), totalTXT.getText().toString(), newSEMTXT.getText().toString());
+                        if (checkupdate == true) {
+                            Toast.makeText(OldStudentAssessmentActivity.this, "Registered Successfully", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(OldStudentAssessmentActivity.this, MainActivity.class);
+                            startActivity(intent);
+                        } else {
+                            Toast.makeText(OldStudentAssessmentActivity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+                        }
                     }
-                    else {
-                        Toast.makeText(OldStudentAssessmentActivity.this,"Something went wrong",Toast.LENGTH_SHORT).show();
+                });
+                alert.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
                     }
-                }
-            });
-            alert.setNegativeButton("NO", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    dialog.dismiss();
-                }
-            }).create().show();
+                }).create().show();
+            }
         }
     }
 
@@ -549,7 +569,7 @@ public class OldStudentAssessmentActivity extends AppCompatActivity {
                 }
             }
             else{
-                //GRADUATE
+
             }
 
         }
