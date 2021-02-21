@@ -13,7 +13,7 @@
         <activity android:name=".StudentActivity" />
         <activity
             android:name=".ValidationOldStudentActivity"
-            android:parentActivityName=".ValidationOldStudentActivity" />
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".AssessmentActivity"
             android:parentActivityName=".AssessmentActivity" />
